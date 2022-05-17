@@ -1,4 +1,5 @@
 What columns violate 1NF?
+member_id (values are not unique and there is no primary key)
 food_code, food_description (multiple values)
 dinner_date (values should be the same kind or type) dates here are written in different ways and squence
 
