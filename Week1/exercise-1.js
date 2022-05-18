@@ -23,33 +23,15 @@ connection.connect(function(err) {
     if (err) throw err;  
     console.log("MySql connected ...");  
 
-    // function to create tables
-    const createTable = (sql, tableName) => {
-        connection.query(sql, function (error, result) {  
-            if (error) throw error;  
-            console.log(`${tableName} table has been created.`);  
-        });  
-    };
-
-
-    
-    const inviteeTableSql = "CREATE TABLE Invitee(invitee_no integer PRIMARY KEY AUTO_INCREMENT, invitee_name TEXT, invited_by TEXT)"
+    const inviteeTableSql = "CREATE TABLE Invitee(invitee_no integer PRIMARY KEY AUTO_INCREMENT, invitee_name VARCHAR(256), invited_by VARCHAR(256))"
     createTable(inviteeTableSql, 'invitee');
 
-    const roomTableSql = "CREATE TABLE Room(room_no integer PRIMARY KEY AUTO_INCREMENT, room_name TEXT, floor_number integer)"
+    const roomTableSql = "CREATE TABLE Room(room_no integer PRIMARY KEY AUTO_INCREMENT, room_name VARCHAR(256), floor_number integer)"
     createTable(roomTableSql, 'room');
 
-    const meetingTableSql = "CREATE TABLE Meeting (meeting_no integer PRIMARY KEY AUTO_INCREMENT, meeting_title TEXT, starting_time text, ending_time text, room_no integer)"
+    const meetingTableSql = "CREATE TABLE Meeting (meeting_no integer PRIMARY KEY AUTO_INCREMENT, meeting_title VARCHAR(256), starting_time VARCHAR(256), ending_time VARCHAR(256), room_no integer)"
     createTable(meetingTableSql, 'meeting');
 
-
-    // function to insert data into tables that takes 3 parameters
-    const insertIntoTable = (sql, values, tableName) => {
-        connection.query(sql, [values], function (error, result) {  
-            if (error) throw error;  
-            console.log(result.affectedRows + ` rows has been added to ${tableName} table.`);  
-            });  
-    };
 
     
     const inviteeSql = "INSERT INTO Invitee (invitee_name, invited_by) VALUES ?"
@@ -92,3 +74,20 @@ connection.connect(function(err) {
 });  
 
 
+
+    // function to create tables
+    const createTable = (sql, tableName) => {
+        connection.query(sql, function (error, result) {  
+            if (error) throw error;  
+            console.log(`${tableName} table has been created.`);  
+        });  
+    };
+
+  // function to insert data into tables that takes 3 parameters
+  const insertIntoTable = (sql, values, tableName) => {
+    connection.query(sql, [values], function (error, result) {  
+        if (error) throw error;  
+        console.log(result.affectedRows + ` rows has been added to ${tableName} table.`);  
+        });  
+};
+    
