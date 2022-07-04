@@ -1,6 +1,5 @@
-> If you are following the HackYourFuture curriculum we recommend you to start with module 1: [HTML/CSS/GIT](https://github.com/HackYourFuture/HTML-CSS). To get a complete overview of the HackYourFuture curriculum first, click [here](https://github.com/HackYourFuture/curriculum).
-
-> Please help us improve and share your feedback! If you find better tutorials or links, please share them by [opening a pull request](https://github.com/HackYourFuture/JavaScript1/pulls).
+ ## IMPORTANT NOTE!
+this is homework repository and to access my submissions you have to go to change the branch from main to Mohamed_Sabouni-w*-Databases and based on the week you picked you can go to the folder of the specified week to find submissions. thank you.
 
 # Module #6 - Databases: Store and retrieve data with MySQL (Backend)
 
